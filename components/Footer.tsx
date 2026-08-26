@@ -203,7 +203,7 @@ export default function Footer() {
           <div className="flex justify-center">
             <div className="relative h-32 w-full max-w-4xl opacity-[0.035] sm:h-40 md:h-52 lg:h-64">
               <Image
-                src="/logo.png"
+                src="/logo-big-white.png"
                 alt=""
                 fill
                 aria-hidden="true"
