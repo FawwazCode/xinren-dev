@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowUpRight, Mail, MessageCircle } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -63,6 +64,7 @@ export default function Footer() {
         {/* Main Footer */}
         <div className="border-t border-white/10 py-16 md:py-20">
           <div className="grid gap-14 md:grid-cols-[1.4fr_0.6fr_0.6fr] md:gap-10">
+            
             {/* Brand */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -74,8 +76,14 @@ export default function Footer() {
                 href="#home"
                 className="group inline-flex items-center gap-3"
               >
-                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-lg font-bold transition-colors duration-300 group-hover:border-white/40">
-                  X
+                {/* Logo */}
+                <span className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-white/15 transition-colors duration-300 group-hover:border-white/40">
+                  <Image
+                    src="/logo-big-white.png"
+                    alt="Xinren Dev Logo"
+                    fill
+                    className="object-contain p-1.5"
+                  />
                 </span>
 
                 <span className="text-lg font-semibold tracking-tight">
@@ -139,6 +147,7 @@ export default function Footer() {
               </p>
 
               <div className="mt-6 flex flex-col items-start gap-4">
+                
                 {/* WhatsApp */}
                 <a
                   href={whatsappUrl}
@@ -183,7 +192,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Large Brand Mark */}
+        {/* Large Brand Logo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -191,12 +200,17 @@ export default function Footer() {
           transition={{ duration: 0.8 }}
           className="overflow-hidden border-t border-white/10 py-12 md:py-20"
         >
-          <p
-            aria-hidden="true"
-            className="select-none text-[24vw] font-black leading-[0.7] tracking-[-0.12em] text-white/[0.035]"
-          >
-            XINREN
-          </p>
+          <div className="flex justify-center">
+            <div className="relative h-32 w-full max-w-4xl opacity-[0.035] sm:h-40 md:h-52 lg:h-64">
+              <Image
+                src="/logo.png"
+                alt=""
+                fill
+                aria-hidden="true"
+                className="object-contain"
+              />
+            </div>
+          </div>
         </motion.div>
 
         {/* Bottom */}

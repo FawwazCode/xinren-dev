@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowDown, ArrowUpRight, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -19,6 +20,7 @@ export default function Hero() {
 
       <div className="container-custom relative z-10">
         <div className="grid items-center gap-16 lg:grid-cols-[1.15fr_0.85fr]">
+          
           {/* Left content */}
           <div>
             <motion.div
@@ -49,7 +51,7 @@ export default function Hero() {
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
               className="mt-8 max-w-xl text-base leading-7 text-neutral-500 md:text-lg"
             >
@@ -82,7 +84,7 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right visual */}
+          {/* Right Logo Visual */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -94,36 +96,7 @@ export default function Hero() {
             }}
             className="relative mx-auto aspect-square w-full max-w-md"
           >
-            {/* Main X */}
-            <div className="absolute inset-8 flex items-center justify-center rounded-[3rem] bg-black shadow-2xl">
-              <motion.div
-                animate={{
-                  rotate: [0, 4, -4, 0],
-                  scale: [1, 1.03, 1.03, 1],
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="relative"
-              >
-                <span className="text-[12rem] font-black leading-none tracking-[-0.15em] text-white md:text-[14rem]">
-                  X
-                </span>
-              </motion.div>
-
-              {/* Corner label */}
-              <div className="absolute bottom-6 left-6 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-md">
-                <span className="text-xs font-medium tracking-wider text-white">
-                  XINREN DEV
-                </span>
-              </div>
-
-              <div className="absolute right-6 top-6 h-2 w-2 rounded-full bg-white" />
-            </div>
-
-            {/* Rotating ring */}
+            {/* Rotating outer ring */}
             <motion.div
               animate={{ rotate: 360 }}
               transition={{
@@ -134,6 +107,7 @@ export default function Hero() {
               className="absolute inset-0 rounded-full border border-black/10"
             />
 
+            {/* Rotating dashed ring */}
             <motion.div
               animate={{ rotate: -360 }}
               transition={{
@@ -143,6 +117,40 @@ export default function Hero() {
               }}
               className="absolute inset-4 rounded-full border border-dashed border-black/[0.08]"
             />
+
+            {/* Logo container */}
+            <div className="absolute inset-8 flex items-center justify-center rounded-[3rem] bg-black shadow-2xl">
+              <motion.div
+                animate={{
+                  rotate: [0, 2, -2, 0],
+                  scale: [1, 1.03, 1.03, 1],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="relative h-52 w-52 md:h-64 md:w-64"
+              >
+                <Image
+                  src="/logo-big-white.png"
+                  alt="Xinren Dev Logo"
+                  fill
+                  priority
+                  className="object-contain"
+                />
+              </motion.div>
+
+              {/* Corner label */}
+              <div className="absolute bottom-6 left-6 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-md">
+                <span className="text-xs font-medium tracking-wider text-white">
+                  XINREN DEV
+                </span>
+              </div>
+
+              {/* Corner dot */}
+              <div className="absolute right-6 top-6 h-2 w-2 rounded-full bg-white" />
+            </div>
 
             {/* Floating label */}
             <motion.div

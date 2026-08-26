@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import Image from "next/image";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -25,8 +26,14 @@ export default function Navbar() {
           className="flex items-center gap-3"
           onClick={() => setIsOpen(false)}
         >
-          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-black">
-            <span className="text-sm font-bold text-white">X</span>
+         <div className="relative h-9 w-9 overflow-hidden rounded-full">
+            <Image
+              src="/logo-besar.png"
+              alt="Xinren Dev Logo"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
 
           <span className="text-sm font-semibold tracking-tight">

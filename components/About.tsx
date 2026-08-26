@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowUpRight, Quote } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -38,7 +39,7 @@ export default function About() {
 
         {/* Brand Story */}
         <div className="mt-24 grid gap-16 md:grid-cols-[0.8fr_1.2fr] md:gap-24">
-          {/* Xinren Word */}
+          {/* Logo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -46,20 +47,31 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="relative flex min-h-[320px] items-center justify-center overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03]"
           >
-            {/* Decorative X */}
-            <span
-              aria-hidden="true"
-              className="absolute select-none text-[18rem] font-black leading-none tracking-[-0.15em] text-white/[0.025]"
+            {/* Main Logo */}
+            <motion.div
+              animate={{
+                y: [0, -4, 0],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="relative z-10 flex flex-col items-center"
             >
-              X
-            </span>
-
-            <div className="relative text-center">
-              <div className="text-7xl font-semibold tracking-[-0.08em] md:text-8xl">
-                X
+              {/* Logo Image */}
+              <div className="relative h-40 w-40 md:h-48 md:w-48">
+                <Image
+                  src="/logo-big-white.png"
+                  alt="Xinren Dev Logo"
+                  fill
+                  priority
+                  className="object-contain"
+                />
               </div>
 
-              <div className="mt-5">
+              {/* Logo Text */}
+              <div className="mt-5 text-center">
                 <p className="text-lg font-medium tracking-wide">
                   Xinren
                 </p>
@@ -68,6 +80,16 @@ export default function About() {
                   信任 · Trust
                 </p>
               </div>
+            </motion.div>
+
+            {/* Corner Dot */}
+            <div className="absolute right-6 top-6 h-2 w-2 rounded-full bg-white/30" />
+
+            {/* Bottom Label */}
+            <div className="absolute bottom-6 left-6 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 backdrop-blur-md">
+              <span className="text-xs font-medium tracking-wider text-white/50">
+                XINREN DEV
+              </span>
             </div>
           </motion.div>
 
@@ -182,7 +204,7 @@ export default function About() {
           ))}
         </div>
 
-        {/* Bottom statement */}
+        {/* Bottom Statement */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -209,6 +231,7 @@ export default function About() {
             className="group inline-flex items-center gap-2 text-sm font-medium text-white/60 transition-colors duration-300 hover:text-white"
           >
             Let&apos;s work together
+
             <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
           </a>
         </motion.div>
