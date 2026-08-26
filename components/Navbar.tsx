@@ -28,7 +28,7 @@ export default function Navbar() {
         >
          <div className="relative h-9 w-9 overflow-hidden rounded-full">
             <Image
-              src="/logo-besar.png"
+              src="/logo-big-black.png"
               alt="Xinren Dev Logo"
               fill
               className="object-contain"
