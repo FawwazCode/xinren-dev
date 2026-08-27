@@ -106,6 +106,16 @@ export const projects = [
         tags: ["UI/UX Design", "E-Commerce", "Web Development"],
     },
     {
+        title: "AMS Maju Jaya",
+        category: "Landing Page",
+        description:
+        "Modern service landing page designed to showcase AMS Maju Jaya's design services with a clean, approachable, and user-friendly interface.",
+        image: "/projects/landing-page-ams-maju-jaya.png",
+        href: "https://ams-maju-jaya.vercel.app/",
+        featured: false,
+        tags: ["UI/UX Design", "Landing Page", "Responsive", "Web Design"],
+    },
+    {
         title: "Landing Page Cafe",
         category: "Landing Page",
         description:
